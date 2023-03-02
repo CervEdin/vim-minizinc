@@ -14,7 +14,7 @@ https://github.com/junegunn/vim-plug
 Add the line inbetween `call plug#begin()` and `call plug#end()` in `.config/nvim/init.vim`
 
 ```
-Plug 'vale1410/vim-minizinc'
+Plug 'cervedin/vim-minizinc'
 ```
 
 ### Vundle 
@@ -23,7 +23,7 @@ Ensure you have [Vundle](https://github.com/gmarik/Vundle.vim) installed.
 Ensure your ~/.vimrc file contains the following plugin line:
 
 ```
-Plugin 'vale1410/vim-minizinc'
+Plugin 'cervedin/vim-minizinc'
 ```
 
 To install to vim add this line: 
