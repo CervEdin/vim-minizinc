@@ -24,7 +24,7 @@ syn case match
   " By default, parts of lines that extend over 80 characters will be
   " highlighted.  To avoid this behaviour, add
   "
-  "   let zinc_no_highlight_overlong = 1
+  "   let zinc_highlight_overlong = 1
   "
   " somewhere in your `.vimrc' file.
   "
@@ -101,7 +101,7 @@ syn keyword zincGlobal      neural_net
 " Other declarations: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#other-declarations
 syn keyword zincGlobal      arg_max arg_min circuit disjoint maximum maximum_arg member minimum minimum_arg network_flow network_flow_cost partition_set piecewise_linear range roots sliding_sum subcircuit sum_pred sum_set 
 
-if !exists("zinc_no_highlight_overlong") || !zinc_no_highlight_overlong
+if exists("zinc_highlight_overlong") && !zinc_highlight_overlong
   " The complicated regexp here matches an 80-column string,
   " with proper treatment of tabs (assuming the tab size is 8):
   " each row consists of 10 columns, and each column consists of either 8
