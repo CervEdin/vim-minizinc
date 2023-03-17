@@ -42,14 +42,15 @@ syn keyword zincKeyword     else elseif endif function if in include let
 syn keyword zincKeyword     minimize maximize op output predicate satisfy
 syn keyword zincKeyword     solve test then type where
 
-syn match   zincInt   		  "\<[0-9]\+\>\|\<0[xX][0-9a-fA-F]\+\>\|\<0[oO][0-7]\+\>"
-syn match   zincFloat		    "\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
-syn match   zincFloat		    "\<[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
+syn match   zincInt         "\<[0-9]\+\>\|\<0[xX][0-9a-fA-F]\+\>\|\<0[oO][0-7]\+\>"
+syn match   zincFloat       "\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
+syn match   zincFloat       "\<[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
 
 syn keyword zincOp          not xor subset superset
 syn keyword zincOp          union diff symdiff intersect div mod
 syn match   zincOp          &\.\.\|+\|-\|\*\|\/\|\^\|++&
 syn match   zincOp          +<->\|<-\|->\|/\\\|\\/+
+
 " Although '=' can be an operator, don't highlight it because it's mostly
 " used in definitions.  Likewise, 'in' can be an operator, but we treat it
 " as a keyword because it's mostly used in generators.
