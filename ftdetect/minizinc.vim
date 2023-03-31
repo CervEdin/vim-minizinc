@@ -1,3 +1,4 @@
-autocmd BufNewFile,BufRead *.mzn set filetype=zinc
-autocmd BufNewFile,BufRead *.fzn set filetype=zinc
-autocmd BufNewFile,BufRead *.dzn set filetype=zinc
+augroup zinc
+	autocmd!
+	autocmd BufNewFile,BufRead *.dzn,*.fzn,*.mzn set filetype=zinc
+augroup END
