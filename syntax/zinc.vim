@@ -57,14 +57,14 @@ syn match   zincOp          +<->\|<-\|->\|/\\\|\\/+
 syn match   zincOp          +==\|!=\|<>\|=<\|<=\|<\|>=\|=>\|>\|>+
 syn match   zincOp          +\.\.\.+
 
-syn keyword zincToDo        XXX TODO NOTE         
-syn region  zincString       start=+"+ skip=+\\.+ end=+"+                              contains=zincStringFmt,@Spell
-syn match   zincStringFmt    +\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]+                                                                           contained
+syn keyword zincToDo        XXX TODO NOTE
+syn region  zincString      start=+"+ skip=+\\.+ end=+"+                              contains=zincStringFmt,@Spell
+syn match   zincStringFmt   +\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]+                                                                           contained
 
 syn keyword zincFun         abs sum product max min forall exists card
 syn keyword zincFun         ceil floor round bool2int int2float set2array
 syn keyword zincFun         sqrt pow exp ln log sin cos
-syn keyword zincFun         show show_int show_float concat join
+syn keyword zincFun         concat file_path format format_justify_string join json_array json_object outputJSON outputJSONParameters show show2d show2d_indexed show3d showCheckerOutput showDzn showDznId showJSON show_float show_indexed show_int string_length occurs int_search seq_search
 
 " Global constraints: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html
 "
@@ -72,7 +72,7 @@ syn keyword zincFun         show show_int show_float concat join
 syn keyword zincGlobal      among at_most1 count count_eq count_geq count_gt count_leq count_lt count_neq distribute global_cardinality global_cardinality_closed global_cardinality_low_up global_cardinality_low_up_closed
 
 " All-Different and co: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#all-different-and-related-constraints
-syn keyword zincGlobal      all_different all_disjoint all_equal alldifferent_except alldifferent_except_0 symmetric_all_different nvalue
+syn keyword zincGlobal      all_different all_disjoint all_equal all_different_except alldifferent_except_0 symmetric_all_different nvalue
 
 " Lexicographic constraints: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#lexicographic-constraints
 syn keyword zincGloal       lex2 lex2_strict lex_chain lex_chain_greater lex_chain_greatereq lex_chain_greatereq_orbitope lex_chain_less lex_chain_lesseq lex_chain_lesseq_orbitope lex_greater lex_greatereq lex_less lex_lesseq seq_precede_chain strict_lex2 value_precede value_precede_chain
