@@ -35,9 +35,9 @@ else
 endif
 
 syn keyword zincType        ann any array bool enum float int list of record
-syn keyword zincType        set string tuple par var
+syn keyword zincType        set string tuple par var opt
 
-syn keyword zincKeyword     annotation assert case constraint
+syn keyword zincKeyword     annotation assert case constraint default
 syn keyword zincKeyword     else elseif endif function if in include let
 syn keyword zincKeyword     minimize maximize op output predicate satisfy
 syn keyword zincKeyword     solve test then type where
@@ -58,13 +58,19 @@ syn match   zincOp          +==\|!=\|<>\|=<\|<=\|<\|>=\|=>\|>\|>+
 syn match   zincOp          +\.\.\.+
 
 syn keyword zincToDo        XXX TODO NOTE
-syn region  zincString      start=+"+ skip=+\\.+ end=+"+                              contains=zincStringFmt,@Spell
+syn region  zincString      start=+"+ skip=+\\.+ end=+"+ contains=zincStringFmt,@Spell
 syn match   zincStringFmt   +\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]+                                                                           contained
 
 syn keyword zincFun         abs sum product max min forall exists card
 syn keyword zincFun         ceil floor round bool2int int2float set2array
 syn keyword zincFun         sqrt pow exp ln log sin cos
-syn keyword zincFun         concat file_path format format_justify_string join json_array json_object outputJSON outputJSONParameters show show2d show2d_indexed show3d showCheckerOutput showDzn showDznId showJSON show_float show_indexed show_int string_length occurs int_search seq_search
+syn keyword zincFun         concat file_path format format_justify_string
+syn keyword zincFun         index_set index_set_1of2 index_set_2of2
+syn keyword zincFun         int_search join json_array json_object occurs
+syn keyword zincFun         outputJSON outputJSONParameters seq_search show
+syn keyword zincFun         show2d show2d_indexed show3d showCheckerOutput
+syn keyword zincFun         showDzn showDznId showJSON show_float show_indexed
+syn keyword zincFun         show_int string_length
 
 " Global constraints: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html
 "
@@ -114,6 +120,8 @@ syn region  cComment   start="/\*" end=".*\*/"                                  
 
 syn sync fromstart
 
+syn match zincParen "[();{}_.]"
+
 hi link zincComment          Comment
 hi link cComment             Comment
 hi link zincType             Type
@@ -128,3 +136,4 @@ hi link zincAtom             Constant
 hi link zincTooLong          ErrorMsg
 hi link zincFun              Function
 hi link zincGlobal           Function
+hi link zincParen            Comment
