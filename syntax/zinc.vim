@@ -41,6 +41,9 @@ syn keyword zincType        par record set string tuple var variant_record
 " or `$$E` for a generic enum type.  lexer.lxx:413,416
 syn match   zincType        "\$\$\?[A-Za-z][A-Za-z0-9_]*"
 
+" Record/tuple field access tail, e.g. `expr.1`, `expr.name` (2.7.0)
+syn match   zincFieldTail   "\.\([0-9]\+\|[A-Za-z_][A-Za-z0-9_]*\|'[^'\n]*'\)"
+
 syn keyword zincKeyword     annotation assert case constraint
 syn keyword zincKeyword     else elseif endif function if in include let
 syn keyword zincKeyword     minimize maximize op output predicate satisfy
@@ -143,6 +146,7 @@ hi link zincFloat            Number
 hi link zincKeyword          Keyword
 hi link zincToDo             Todo
 hi link zincOp               Special
+hi link zincFieldTail        Special
 hi link zincString           String
 hi link zincStringFmt        Special
 hi link zincAtom             Constant
