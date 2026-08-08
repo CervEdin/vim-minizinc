@@ -89,7 +89,7 @@ syn keyword zincGlobal      among at_most1 count count_eq count_geq count_gt cou
 syn keyword zincGlobal      all_different all_disjoint all_equal alldifferent_except alldifferent_except_0 symmetric_all_different nvalue
 
 " Lexicographic constraints: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#lexicographic-constraints
-syn keyword zincGloal       lex2 lex2_strict lex_chain lex_chain_greater lex_chain_greatereq lex_chain_greatereq_orbitope lex_chain_less lex_chain_lesseq lex_chain_lesseq_orbitope lex_greater lex_greatereq lex_less lex_lesseq seq_precede_chain strict_lex2 value_precede value_precede_chain
+syn keyword zincGlobal      lex2 lex2_strict lex_chain lex_chain_greater lex_chain_greatereq lex_chain_greatereq_orbitope lex_chain_less lex_chain_lesseq lex_chain_lesseq_orbitope lex_greater lex_greatereq lex_less lex_lesseq seq_precede_chain strict_lex2 value_precede value_precede_chain
 
 " Sorting constraints: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#sorting-constraints
 syn keyword zincGlobal      arg_sort sort increasing decreasing strictly_increasing strictly_decreasing
