@@ -67,6 +67,11 @@ syn match   zincOp          +<->\|<-\|->\|/\\\|\\/+
 syn match   zincOp          +==\|!=\|<>\|=<\|<=\|<\|>=\|=>\|>\|>+
 syn match   zincOp          +\.\.\.+
 
+" Weak arithmetic operators (2.6.0).  `~` is a magic atom in Vim regex
+" (matches the last substitute string), so it must be escaped to match
+" a literal tilde.
+syn match   zincOp          &\~+\|\~-\|\~\*\|\~/\|\~!=\|\~=\|\~div&
+
 syn keyword zincToDo        XXX TODO NOTE
 syn region  zincString       start=+"+ skip=+\\.+ end=+"+                              contains=zincStringFmt,zincInterp,@Spell
 syn match   zincStringFmt    +\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]+                                                                           contained
