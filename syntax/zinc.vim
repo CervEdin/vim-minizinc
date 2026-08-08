@@ -47,7 +47,7 @@ syn match   zincFloat       "\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
 syn match   zincFloat       "\<[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
 
 syn keyword zincOp          not xor subset superset
-syn keyword zincOp          union diff symdiff intersect div mod
+syn keyword zincOp          default diff div intersect mod symdiff union
 syn match   zincOp          &\.\.\|+\|-\|\*\|\/\|\^\|++&
 syn match   zincOp          +<->\|<-\|->\|/\\\|\\/+
 
