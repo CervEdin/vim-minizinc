@@ -35,7 +35,7 @@ else
 endif
 
 syn keyword zincType        ann any array bool enum float int list of opt
-syn keyword zincType        par record set string tuple var
+syn keyword zincType        par record set string tuple var variant_record
 
 syn keyword zincKeyword     annotation assert case constraint
 syn keyword zincKeyword     else elseif endif function if in include let
