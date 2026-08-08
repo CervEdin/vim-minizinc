@@ -56,7 +56,7 @@ syn keyword zincOp          not xor subset superset
 syn keyword zincOp          default diff div intersect mod symdiff union
 syn match   zincOp          &\.\.\|+\|-\|\*\|\/\|\^\|++&
 
-" Half-open range operators (2.6.0): a..<b, a<..b, a<..<b
+" Half-open range operators (2.6.0)
 syn match   zincOp          &<\.\.<\|\.\.<\|<\.\.&
 
 syn match   zincOp          +<->\|<-\|->\|/\\\|\\/+
@@ -67,9 +67,7 @@ syn match   zincOp          +<->\|<-\|->\|/\\\|\\/+
 syn match   zincOp          +==\|!=\|<>\|=<\|<=\|<\|>=\|=>\|>\|>+
 syn match   zincOp          +\.\.\.+
 
-" Weak arithmetic operators (2.6.0).  `~` is a magic atom in Vim regex
-" (matches the last substitute string), so it must be escaped to match
-" a literal tilde.
+" Weak arithmetic operators (2.6.0); `~` is escaped since it's a magic atom
 syn match   zincOp          &\~+\|\~-\|\~\*\|\~/\|\~!=\|\~=\|\~div&
 
 syn keyword zincToDo        XXX TODO NOTE
