@@ -55,6 +55,10 @@ syn keyword zincAtom        infinity
 syn keyword zincOp          not xor subset superset
 syn keyword zincOp          default diff div intersect mod symdiff union
 syn match   zincOp          &\.\.\|+\|-\|\*\|\/\|\^\|++&
+
+" Half-open range operators (2.6.0): a..<b, a<..b, a<..<b
+syn match   zincOp          &<\.\.<\|\.\.<\|<\.\.&
+
 syn match   zincOp          +<->\|<-\|->\|/\\\|\\/+
 
 " Although '=' can be an operator, don't highlight it because it's mostly
