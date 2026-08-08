@@ -92,38 +92,38 @@ syn keyword zincFun         show show_int show_float concat join
 
 " Global constraints: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html
 "
-" Counting constraints: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#counting-constraints
-syn keyword zincGlobal      among at_most1 count count_eq count_geq count_gt count_leq count_lt count_neq distribute global_cardinality global_cardinality_closed global_cardinality_low_up global_cardinality_low_up_closed
+" Counting constraints: https://www.minizinc.org/doc-2.10.0/en/lib-globals.html#counting-constraints
+syn keyword zincGlobal      among among_fn at_least at_most at_most1 count count_eq count_fn count_geq count_gt count_leq count_lt count_neq distribute distribute_fn exactly global_cardinality global_cardinality_closed global_cardinality_closed_fn global_cardinality_fn global_cardinality_low_up global_cardinality_low_up_closed sliding_among
 
-" All-Different and co: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#all-different-and-related-constraints
-syn keyword zincGlobal      all_different all_disjoint all_equal alldifferent_except alldifferent_except_0 symmetric_all_different nvalue
+" All-Different and co: https://www.minizinc.org/doc-2.10.0/en/lib-globals.html#all-different-and-related-constraints
+syn keyword zincGlobal      all_different all_different_except all_different_except_0 all_disjoint all_equal alldifferent_except alldifferent_except_0 nvalue nvalue_fn symmetric_all_different
 
-" Lexicographic constraints: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#lexicographic-constraints
+" Lexicographic constraints: https://www.minizinc.org/doc-2.10.0/en/lib-globals.html#lexicographic-constraints
 syn keyword zincGlobal      lex2 lex2_strict lex_chain lex_chain_greater lex_chain_greatereq lex_chain_greatereq_orbitope lex_chain_less lex_chain_lesseq lex_chain_lesseq_orbitope lex_greater lex_greatereq lex_less lex_lesseq seq_precede_chain strict_lex2 value_precede value_precede_chain
 
-" Sorting constraints: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#sorting-constraints
-syn keyword zincGlobal      arg_sort sort increasing decreasing strictly_increasing strictly_decreasing
+" Sorting constraints: https://www.minizinc.org/doc-2.10.0/en/lib-globals.html#sorting-constraints
+syn keyword zincGlobal      arg_sort arg_val sort sort_fn increasing decreasing strictly_increasing strictly_decreasing
 
-" Channeling constraints: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#channeling-constraints
-syn keyword zincGlobal      int_set_channel inverse inverse_in_range inverse_set link_set_to_booleans
+" Channeling constraints: https://www.minizinc.org/doc-2.10.0/en/lib-globals.html#channeling-constraints
+syn keyword zincGlobal      int_set_channel inverse inverse_fn inverse_in_range inverse_set link_set_to_booleans
 
-" Packing constraints: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#packing-constraints
-syn keyword zincGlobal      bin_packing bin_packing_capa bin_packing_load diffn diffn_k diffn_nonstrict diffn_nonstrict_k geost geost_bb geost_nonoverlap_k geost_smallest_bb knapsack
+" Packing constraints: https://www.minizinc.org/doc-2.10.0/en/lib-globals.html#packing-constraints
+syn keyword zincGlobal      bin_packing bin_packing_capa bin_packing_load bin_packing_load_fn diffn diffn_k diffn_nonstrict diffn_nonstrict_k geost geost_bb geost_nonoverlap_k geost_smallest_bb knapsack
 
-" Scheduling constraints: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#scheduling-constraints
-syn keyword zincGlobal      alternative cumulative disjunctive disjunctive_strict span
+" Scheduling constraints: https://www.minizinc.org/doc-2.10.0/en/lib-globals.html#scheduling-constraints
+syn keyword zincGlobal      alternative cumulative cumulative_opt cumulatives cumulatives_opt disjunctive disjunctive_opt disjunctive_strict disjunctive_strict_opt span
 
-" Graph constraints: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#graph-constraints
+" Graph constraints: https://www.minizinc.org/doc-2.10.0/en/lib-globals.html#graph-constraints
 syn keyword zincGlobal      bounded_dpath bounded_path connected d_weighted_spanning_tree dag dconnected dpath dreachable dsteiner dtree path reachable steiner subgraph tree weighted_spanning_tree
 
-" Extensional constraints: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#extensional-constraints-table-regular-etc
-syn keyword zincGlobal      cost_mdd cost_regular mdd mdd_nondet regular regular_nfa table
+" Extensional constraints: https://www.minizinc.org/doc-2.10.0/en/lib-globals.html#extensional-constraints-table-regular-etc
+syn keyword zincGlobal      cost_mdd cost_regular mdd mdd_nondet regular regular_nfa regular_regexp table
 
 " Machine learning constraints
 syn keyword zincGlobal      neural_net
 
-" Other declarations: https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#other-declarations
-syn keyword zincGlobal      arg_max arg_min circuit disjoint maximum maximum_arg member minimum minimum_arg network_flow network_flow_cost partition_set piecewise_linear range roots sliding_sum subcircuit sum_pred sum_set 
+" Other declarations: https://www.minizinc.org/doc-2.10.0/en/lib-globals.html#other-declarations
+syn keyword zincGlobal      arg_max arg_min circuit circuit_opt disjoint element maximum maximum_arg member minimum minimum_arg network_flow network_flow_cost partition_set piecewise_linear range range_fn roots roots_fn sliding_sum subcircuit sum_pred sum_set var_perm_sym var_sqr_sym write writes writes_seq
 
 if exists("zinc_highlight_overlong") && !zinc_highlight_overlong
   " The complicated regexp here matches an 80-column string,
