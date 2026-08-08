@@ -37,6 +37,10 @@ endif
 syn keyword zincType        ann any array bool enum float int list of opt
 syn keyword zincType        par record set string tuple var variant_record
 
+" Generic (polymorphic) type-inst identifiers, e.g. `function $T: foo($T: x)`
+" or `$$E` for a generic enum type.  lexer.lxx:413,416
+syn match   zincType        "\$\$\?[A-Za-z][A-Za-z0-9_]*"
+
 syn keyword zincKeyword     annotation assert case constraint
 syn keyword zincKeyword     else elseif endif function if in include let
 syn keyword zincKeyword     minimize maximize op output predicate satisfy
