@@ -63,9 +63,17 @@ syn match   zincOp          +<->\|<-\|->\|/\\\|\\/+
 syn match   zincOp          +==\|!=\|<>\|=<\|<=\|<\|>=\|=>\|>\|>+
 syn match   zincOp          +\.\.\.+
 
-syn keyword zincToDo        XXX TODO NOTE         
-syn region  zincString       start=+"+ skip=+\\.+ end=+"+                              contains=zincStringFmt,@Spell
+syn keyword zincToDo        XXX TODO NOTE
+syn region  zincString       start=+"+ skip=+\\.+ end=+"+                              contains=zincStringFmt,zincInterp,@Spell
 syn match   zincStringFmt    +\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]+                                                                           contained
+
+" String interpolation: "text \(expr) text".  The interpolated expression is
+" ordinary Zinc code, so highlight it as such (via contains=TOP) rather than
+" swallowing it as part of the string body; \( and ) are shown like other
+" string escapes (zincStringFmt).  Parens inside the expression nest via
+" zincInterpParen so a `)` from e.g. a function call doesn't end it early.
+syn region  zincInterp        matchgroup=zincStringFmt start=+\\(+ end=+)+             contained contains=TOP,zincInterpParen
+syn region  zincInterpParen                             start=+(+  end=+)+             contained contains=TOP,zincInterpParen
 
 syn keyword zincFun         abs sum product max min forall exists card
 syn keyword zincFun         ceil floor round bool2int int2float set2array
