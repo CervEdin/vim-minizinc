@@ -135,11 +135,13 @@ if exists("zinc_highlight_overlong") && !zinc_highlight_overlong
 endif
 
 syn region  cComment   start="/\*" end=".*\*/"                                          contains=zincToDo
+syn region  zincDocComment  start="/\*\*\+" end=".*\*/"                                 contains=zincToDo
 
 syn sync fromstart
 
 hi link zincComment          Comment
 hi link cComment             Comment
+hi link zincDocComment       SpecialComment
 hi link zincType             Type
 hi link zincInt              Number
 hi link zincFloat            Number
